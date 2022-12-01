@@ -1,0 +1,14 @@
+class Solution:
+    def singleNumber(self, nums: List[int]) -> List[int]:
+        h={}
+        res=[]
+        for i in range(len(nums)):
+            if nums[i] in h:
+                h[nums[i]]+=1
+            else:
+                h[nums[i]]=1
+        for i in h:
+            if h[i]==1:
+                res.append(i)
+        return res
+                
